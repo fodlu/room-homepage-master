@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: "League Spartan", sans-serif;
+}
+
+.links {
+  display: none;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 2fr 1.125fr;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+nav {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+}
+
+nav p {
+  font-weight: 700;
+  margin-right: 3rem;
+  font-size: 20px;
+  color: white;
+}
+
+nav a {
+  margin-right: 2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.heroImg {
+  grid-column: 1 / 7;
+  grid-row: 1/ 2;
+  background-image: url("images/desktop-image-hero-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.heroText {
+  grid-column: 7 / 11;
+  grid-row: 1/ 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ham,
+.close {
+  display: none;
+  cursor: pointer;
+}
+
+.heroText > div {
+  width: 50%;
+}
+
+.heroText > div h1 {
+  margin-bottom: 1rem;
+  font-size: 26px;
+  color: hsl(0, 0%, 0%);
+}
+
+.heroText > div p {
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+
+.heroText a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.75rem;
+  font-weight: 700;
+}
+
+.heroText a:hover {
+  color: hsl(0, 0%, 63%);
+}
+
+.heroText a img {
+  width: 30px;
+}
+
+.dark {
+  grid-column: 1 / 4;
+  grid-row: 2/ 3;
+}
+
+.about {
+  grid-column: 4 / 8;
+  grid-row: 2/ 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3.5rem;
+}
+
+.light {
+  grid-column: 8 / 11;
+  grid-row: 2/ 3;
+}
+
+img {
+  width: 100%;
+}
+
+.head {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  margin-bottom: 1rem;
+  color: hsl(0, 0%, 27%);
+}
+
+.back,
+.front {
+  width: 67px;
+  height: 67px;
+  background-color: black;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.front:hover,
+.back:hover {
+  background-color: hsl(0, 0%, 27%);
+}
+
+.control {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.control img {
+  width: 10px;
+}
+
+p {
+  color: hsl(0, 0%, 63%);
+}
+
+@media only screen and (max-width: 375px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .heroImg {
+    height: 400px;
+    width: 100%;
+    background-image: url("images/mobile-image-hero-1.jpg");
+    background-size: 100% 100%;
+  }
+
+  .heroText {
+    padding: 3rem 2rem;
+  }
+
+  .heroText > div {
+    width: 100%;
+  }
+
+  .control {
+    top: -27%;
+    left: 65%;
+  }
+
+  .about {
+    padding: 3rem 2.5rem;
+  }
+
+  .link {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    margin-left: 120px;
+  }
+
+  .ham,
+  .close {
+    display: block;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    width: 30px;
+  }
+
+  .links {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3rem 0;
+    padding-left: 11.5rem;
+    background-color: white;
+    width: 100%;
+    z-index: 4;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    padding: 1rem;
+    text-transform: lowercase;
+  }
+
+  .close {
+    z-index: 5;
+    width: 15px;
+  }
+
+  .active a {
+    color: black;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hidden {
+  display: none;
+}
